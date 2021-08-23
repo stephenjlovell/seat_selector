@@ -56,11 +56,10 @@ json_str = <<-JSON
       "row": "h",
       "column": 8,
       "status": "AVAILABLE"
-    }
+    
   }
 }
 JSON
 
 finder = SeatSelector.parse(json_str)
-
-pp finder.get_best_seats(3)
+puts finder.get_best_seats(3)

@@ -6,7 +6,7 @@ module SeatSelector
       @row = converter.to_i(params.fetch("row"))
       @column = params.fetch("column")
       @id = params.fetch("id")
-      @is_available = (params.fetch("status", "") == "AVAILABLE")
+      @is_available = (params.fetch("status") == "AVAILABLE")
     end
 
     def to_s

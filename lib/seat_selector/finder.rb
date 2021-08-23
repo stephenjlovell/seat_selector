@@ -2,9 +2,9 @@ module SeatSelector
   class Finder
     attr_reader :seats
   
-    def initialize(seats_by_id, total_rows, total_columns)
-      @seats = build_available_seats(seats_by_id)
-      set_distance!(total_columns)
+    def initialize(venue)
+      @seats = venue.available_seats
+      set_distance!(venue.total_columns)
     end
   
     def get_best_seats(seats_needed = 1)
@@ -44,16 +44,6 @@ module SeatSelector
     end
   
     private
-  
-    def build_available_seats(seats_by_id)
-      seats_by_id.values.each_with_object({}) do |args, seats|
-        seat = Seat.new(args)
-        if seat.available?
-          seats[seat.row] ||= {}
-          seats[seat.row][seat.column] = seat
-        end
-      end
-    end
 
     def set_distance!(total_columns)
       median_column = median(total_columns)
