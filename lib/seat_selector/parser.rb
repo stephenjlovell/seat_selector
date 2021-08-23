@@ -1,11 +1,11 @@
 require 'json'
 
 module SeatSelector
-
-  def self.parse(json)
-    obj = JSON.parse(str)
-    layout = obj["venue"]["layout"]
-    SeatSelector::Finder.new(obj["seats"], layout["rows"], layout["columns"])
+  class Parser
+    def self.parse(json_str)
+      obj = JSON.parse(json_str)
+      layout = obj["venue"]["layout"]
+      Finder.new(obj["seats"], layout["rows"], layout["columns"])
+    end
   end
-
 end

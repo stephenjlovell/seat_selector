@@ -1,7 +1,6 @@
 module SeatSelector
   class Seat
-    attr_reader :row, :column
-    attr_accessor :distance
+    attr_reader :row, :column, :distance
   
     def initialize(params, converter = AlphaConverter)
       @row = converter.to_i(params.fetch("row"))
@@ -16,6 +15,10 @@ module SeatSelector
   
     def available?
       @is_available
+    end
+
+    def set_distance!(median_column)
+      @distance = (@row - 1).abs + (@column - median_column).abs
     end
   end
 end

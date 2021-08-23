@@ -3,7 +3,8 @@ module SeatSelector
     attr_reader :seats
   
     def initialize(seats_by_id, total_rows, total_columns)
-      @seats = build_available_seats(seats_by_id, total_columns)
+      @seats = build_available_seats(seats_by_id)
+      set_distance!(total_columns)
     end
   
     def get_best_seats(seats_needed = 1)
@@ -44,21 +45,22 @@ module SeatSelector
   
     private
   
-    def build_available_seats(seats_by_id, total_columns)
-      median_column = median(total_columns)
-
+    def build_available_seats(seats_by_id)
       seats_by_id.values.each_with_object({}) do |args, seats|
         seat = Seat.new(args)
         if seat.available?
-          seat.distance = distance_to_best_seat(seat.row, seat.column)
           seats[seat.row] ||= {}
           seats[seat.row][seat.column] = seat
         end
       end
     end
 
-    def distance_to_best_seat(row, column, median_column)
-      (row - 1).abs + (column - median_column).abs
+    def set_distance!(total_columns)
+      median_column = median(total_columns)
+
+      @seats.each_value do |seats_in_row|
+        seats_in_row.each_value {|seat| seat.set_distance!(median_column) }
+      end
     end
   
     # get median of contiguous integer range 1 to max
