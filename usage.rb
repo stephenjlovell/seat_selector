@@ -1,7 +1,6 @@
-require 'json'
 require_relative './lib/seat_selector'
 
-str = <<-JSON
+json_str = <<-JSON
 {
   "venue": {
     "layout": {
@@ -62,8 +61,6 @@ str = <<-JSON
 }
 JSON
 
-obj = JSON.parse(str)
-layout = obj["venue"]["layout"]
-finder = SeatSelector::Finder.new(obj["seats"], layout["rows"], layout["columns"])
+finder = SeatSelector.parse(json_str)
 
 pp finder.get_best_seats(3)
