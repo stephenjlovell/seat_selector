@@ -3,11 +3,15 @@ module SeatSelector
     attr_reader :row, :column
     attr_accessor :distance
   
-    def initialize(params)
-      @row = AlphaConverter.to_i(params.fetch("row"))
+    def initialize(params, converter = AlphaConverter)
+      @row = converter.to_i(params.fetch("row"))
       @column = params.fetch("column")
-      @id = params.fetch("id", @row.to_s + @column.to_s)
+      @id = params.fetch("id")
       @is_available = (params.fetch("status", "") == "AVAILABLE")
+    end
+
+    def to_s
+      @id.to_s.upcase
     end
   
     def available?
