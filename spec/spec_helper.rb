@@ -1,1 +1,1 @@
-require './lib/seat_selector.rb'
+require_relative '../lib/seat_selector'
