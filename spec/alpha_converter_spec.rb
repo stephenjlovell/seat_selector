@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SeatSelector::AlphaConverter do
+describe 'SeatSelector::AlphaConverter' do
   subject { SeatSelector::AlphaConverter }
   it { should respond_to(:to_i) }
 

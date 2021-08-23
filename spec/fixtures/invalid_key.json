@@ -1,0 +1,28 @@
+{
+  "SOME_INVALID KEY": {
+    "layout": {
+      "rows": 10,
+      "columns": 50
+    }
+  },
+  "seats": {
+    "a1": {
+      "id": "a1",
+      "row": "a",
+      "column": 1,
+      "status": "AVAILABLE"
+    },
+    "b6": {
+      "id": "b6",
+      "row": "b",
+      "column": 6,
+      "status": "UNAVAILABLE"
+    },
+    "b7": {
+      "id": "b7",
+      "row": "b",
+      "column": 7,
+      "status": "AVAILABLE"
+    }
+  }
+}
