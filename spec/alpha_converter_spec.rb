@@ -15,7 +15,4 @@ describe 'SeatSelector::AlphaConverter' do
       expect(conv.to_i("AaA")).to eq(703)
     end
   end
-  context "with invalid input" do
-    pending "handles invalid input appropriately"
-  end
 end

@@ -22,9 +22,24 @@ module SeatSelector
     end
 
     def self.build_available_seats(seats_args)
-      seats_args.map { |args| Seat.new(args) }
+      seats_args.map { |args| build_seat(args) }
     end
     private_class_method :build_available_seats
+
+    def self.build_seat(args)
+      row = AlphaConverter.to_i(args.fetch("row"))
+      column = args.fetch("column")
+      id = args.fetch("id")
+      is_available = (args.fetch("status") == "AVAILABLE")
+    
+      Seat.new({
+        row: row,
+        column: column,
+        id: id,
+        is_available: is_available,
+      })
+    end
+    private_class_method :build_seat
   
   end
 
