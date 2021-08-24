@@ -26,4 +26,4 @@ seats = finder.get_best_seats(1)
 seats = finder.get_best_seats(3)
 ```
 
-You'll get back an array of the best available group of adjacent seats, or an empty array if no such group is available. See ./spec/fixtures/valid_data.json for examples of the supported format.
+You'll get back an array of the best available group of adjacent seats, or an empty array if no such group is available. See `./spec/fixtures/valid_data.json` for examples of the supported format.
