@@ -16,9 +16,6 @@ require 'seat_selector'
 json_str = IO.read('path/to/data.json')
 
 # Pass your JSON-formatted data to SeatSelector.
-# You'll get back an array of the best available group of adjacent seats,
-# or an empty array if no such group is available.
-# See ./spec/fixtures/valid_data.json for examples of the supported format.
 finder = SeatSelector.parse(json_str)
 
 # request a single seat
@@ -29,3 +26,4 @@ seats = finder.get_best_seats(1)
 seats = finder.get_best_seats(3)
 ```
 
+You'll get back an array of the best available group of adjacent seats, or an empty array if no such group is available. See ./spec/fixtures/valid_data.json for examples of the supported format.
