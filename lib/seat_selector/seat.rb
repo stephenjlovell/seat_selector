@@ -1,6 +1,6 @@
 module SeatSelector
   class Seat
-    attr_reader :row, :column, :distance
+    attr_reader :row, :column, :id, :distance
   
     def initialize(params, converter = AlphaConverter)
       @row = converter.to_i(params.fetch("row"))

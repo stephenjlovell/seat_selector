@@ -8,6 +8,7 @@ module SeatSelector
     end
   
     def get_best_seats(seats_needed = 1)
+      return [] if seats_needed < 1
       best_seat = nil
       best_distance = nil
       @seats.each do |r, seats_in_row| # skip rows with no open seats
