@@ -12,6 +12,9 @@ $ gem install seat_selector
 
 ```ruby
 require 'seat_selector'
+
+json_str = IO.read('path/to/data.json')
+
 # Pass your JSON-formatted data to SeatSelector.
 # You'll get back an array of the best available group of adjacent seats,
 # or an empty array if no such group is available.
