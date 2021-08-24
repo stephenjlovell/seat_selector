@@ -10,7 +10,10 @@ module SeatSelector
         obj = JSON.parse(json_str)
         seats = build_available_seats(obj.fetch("seats").values)
         layout = obj.fetch("venue").fetch("layout")
-        venue = Venue.new(seats, layout.fetch("rows"), layout.fetch("columns"))
+        rows = layout.fetch("rows")
+        columns = layout.fetch("columns")
+        
+        venue = Venue.new(seats, rows, columns)
         Finder.new(venue)
 
       rescue StandardError

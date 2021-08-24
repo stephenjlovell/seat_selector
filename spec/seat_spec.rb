@@ -10,5 +10,5 @@ describe SeatSelector::Seat do
     }) 
   }
 
-  it { expect(seat).to respond_to(:row, :column, :distance) }
+  it { expect(seat).to respond_to(:row, :column, :distance, :to_s) }
 end

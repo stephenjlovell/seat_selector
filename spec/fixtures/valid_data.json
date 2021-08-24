@@ -22,13 +22,13 @@
       "id": "b6",
       "row": "b",
       "column": 6,
-      "status": "UNAVAILABLE"
+      "status": "AVAILABLE"
     },
     "b7": {
       "id": "b7",
       "row": "b",
       "column": 7,
-      "status": "AVAILABLE"
+      "status": "UNAVAILABLE"
     },
     "b8": {
       "id": "b8",
@@ -53,6 +53,24 @@
       "row": "h",
       "column": 8,
       "status": "AVAILABLE"
+    },
+    "h9": {
+      "id": "h9",
+      "row": "h",
+      "column": 9,
+      "status": "AVAILABLE"
+    },
+    "h10": {
+      "id": "h10",
+      "row": "h",
+      "column": 10,
+      "status": "AVAILABLE"
+    },
+    "h11": {
+      "id": "h11",
+      "row": "h",
+      "column": 11,
+      "status": "UNAVAILABLE"
     }
   }
 }
